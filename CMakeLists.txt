@@ -36,7 +36,8 @@ pico_sdk_init()
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(pemsy 
-    pemsy.c 
+    src/main.c 
+    src/led.c
     
     )
 
@@ -56,7 +57,7 @@ target_link_libraries(pemsy
 
 # Add the standard include files to the build
 target_include_directories(pemsy PRIVATE
-        ${CMAKE_CURRENT_LIST_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}/include
 )
 
 # Add any user requested libraries
