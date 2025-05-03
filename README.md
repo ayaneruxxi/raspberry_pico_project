@@ -9,16 +9,13 @@ This repository documents my personal summary and reorganization of experiments 
 Completed:
 - LED Control Module
 
-To be summarized (planned for future):
+To be summarized progressively
 - LCD Module
 - PWM Module
 - Rotary Encoder Module
 - ADC Module
 - Radio Communication Module
 
-Currently, only the LED module has been summarized. Other modules will be added progressively.
-
----
 
 ## Development Environment
 
@@ -33,6 +30,3 @@ Currently, only the LED module has been summarized. Other modules will be added 
 This repository is intended for personal study purposes only.  
 Some designs are inspired by the laboratory guidelines from FAU, but all code and documentation are independently written.
 
----
-
-Work in progress for documentation.
