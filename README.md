@@ -1,6 +1,6 @@
-# Embedded Microcontroller System - Praktikum (FAU 2024)
+# Embedded Microcontroller System - Praktikum
 
-This repository documents my personal summary and reorganization of experiments completed during the "Embedded Microcontroller Systems" laboratory course at FAU Erlangen-Nürnberg in 2024.
+This repository documents my personal summary and reorganization of experiments completed during the "Embedded Microcontroller Systems" laboratory course in 2024.
 
 ---
 
@@ -28,5 +28,4 @@ To be summarized progressively
 ## General Disclaimer
 
 This repository is intended for personal study purposes only.  
-Some designs are inspired by the laboratory guidelines from FAU, but all code and documentation are independently written.
 
