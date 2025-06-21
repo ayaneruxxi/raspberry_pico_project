@@ -15,7 +15,7 @@ typedef enum {
     LED_GREEN = 0b10  // 绿灯亮 / GREEN ON
 } led_color_t;
 
-// 初始化所有LED引脚 / Initialize all LED GPIOs
+// 设定所有LED引脚output / Initialize all LED GPIOs and set output
 void led_init(void) {
     for (int i = 0; i < 3; i++) {
         gpio_init(GPIO_PINS[i]);
@@ -32,7 +32,7 @@ void led_all_off(void) {
 }
 
 // 设置LED初始状态（根据6位pattern）/ Set initial LED state (according to 6-bit pattern)
-void led_control(uint8_t pattern, bool toggle) {
+void led_control(uint8_t pattern) {
     for (int i = 0; i < 3; i++) {
         uint8_t bits = (pattern >> (i * 2)) & 0x03; // 每两位提取一组 / Extract 2 bits per group
 
@@ -49,8 +49,6 @@ void led_control(uint8_t pattern, bool toggle) {
 }
 
 // 翻转LED状态 / Toggle current LED states
-void led_toggle(void) {
-    for (int i = 0; i < 3; i++) {
-        gpio_xor_mask(1u << GPIO_PINS[i]); // 翻转指定引脚电平 / Toggle pin level 1u = unsigned int 1
-    }
+void led_toggle(int index) {
+    gpio_xor_mask(1u << index); // 翻转指定引脚电平 / Toggle pin level 1u = unsigned int 1
 }
