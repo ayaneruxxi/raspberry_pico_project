@@ -27,7 +27,7 @@ void led_green(uint8_t index){
     gpio_put(index, GREEN_ON);
 }
 
-void led_red(uint8_t index){
+void led_red(uint8_t index){                    // index is pin number
     gpio_init(index);
     gpio_set_dir(index, GPIO_OUT);
     gpio_put(index, RED_ON);
@@ -53,4 +53,35 @@ void led_control_all(uint8_t pattern) {
 // 翻转单个LED状态 / Toggle current LED states
 void led_toggle(int index) {
     gpio_xor_mask(1u << index); // 翻转指定引脚电平 / Toggle pin level 1u = unsigned int 1
+}
+
+
+void led_debugging_red(uint8_t error_codes){
+
+    led_off_all();
+    
+    if (error_codes & 0b001){
+        led_red(GPIO_LED3);
+    }
+    if (error_codes & 0b010){
+        led_red(GPIO_LED2);
+    }
+    if (error_codes & 0b100){
+        led_red(GPIO_LED1);
+    }
+}
+
+void led_debugging_green(uint8_t error_codes){
+
+    led_off_all();
+    
+    if (error_codes & 0b001){
+        led_green(GPIO_LED3);
+    }
+    if (error_codes & 0b010){
+        led_green(GPIO_LED2);
+    }
+    if (error_codes & 0b100){
+        led_green(GPIO_LED1);
+    }
 }
